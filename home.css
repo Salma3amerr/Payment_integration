@@ -1,0 +1,500 @@
+.image {
+    background-image: url(homelss-removebg-preview.png);
+    height:100vh;
+    width: 100%;
+    background-position:right;
+    background-repeat: no-repeat;
+    background-size: 20cm;
+    background-attachment:local;
+    margin-top: 80px;
+}
+.image1{
+    height:120px; 
+    border-radius: 50%; 
+    border: 10px solid #2c056a;
+    margin: 100px;
+}
+html {
+    height:100vh;
+  }
+  body {
+    height:100vh;
+    width: 100%;
+  }
+  .title {
+    margin: auto;
+    color: rgb(54, 83, 65);
+    font: 700 normal 2.5em 'tahoma';
+    text-shadow: 5px 2px #fbf8f8, 2px 4px #aba7ab, 3px 5px #f3f1f1;
+    position: absolute;
+    right: 35rem;
+    top: 20rem;
+    padding: 0 13rem;
+  }
+  .fade-in {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.fade-in.active {
+    opacity: 1;
+}
+
+  
+  ul {
+    position: relative;
+    width: 30em;
+    height: 2em;
+    margin: 50px auto;
+    padding: 5px;
+    white-space: nowrap;
+    font-size: x-large;
+  }
+  
+  ul li {
+    display: inline;
+    text-align: center;
+    
+  }
+  
+  ul li a {
+    position: relative;
+    top: 10;
+    left: 10;
+    right: 55em;
+    bottom: 0;
+    display: inline-block;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: .9em .9em;
+    color: #09C;
+    text-decoration: none;
+    text-shadow: 0 1px 0 white;
+  
+    /*transition*/
+    -webkit-transition: width .3s,right .3s;
+    -moz-transition: width .3s,right .3s;
+    -o-transition: width .3s,right .3s;
+    transition: width .3s,right .3s;
+  }
+  
+  ul li:nth-child(1) a { width: 2em; }
+  ul li:nth-child(2) a { width: 4em; }
+  ul li:nth-child(3) a { width: 4em; }
+  ul li:nth-child(4) a { width: 12em; }
+  ul li:nth-child(5) a { width: 5em; }
+  
+  ul li:last-child a::after {
+    content: "";
+    position: absolute;
+    right: inherit;
+    bottom: -3px;
+    width: inherit;
+    height: 3px;
+    background: #ccc;
+    pointer-events: none;
+    /*transition*/
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+  }
+  
+  ul li:nth-child(1) ~ li:last-child a {
+    right: 25em;
+    width: 2em;
+  }
+  
+  ul li:nth-child(2):hover ~ li:last-child a {
+    right: 21em;
+    width: 4em;
+  }
+  
+  ul li:nth-child(3):hover ~ li:last-child a {
+    right: 17em;
+    width: 4em;
+  }
+  
+  ul li:nth-child(4):hover ~ li:last-child a {
+    right: 5em;
+    width: 12em;
+  }
+  
+  ul li:nth-child(5):last-child:hover a {
+    right: 0;
+    width: 5em;
+  }
+  
+  ul li:hover ~ li:last-child a::after,
+  ul li:last-child:hover a::after { background: #c351fa; }
+  
+  ul li:last-child a {
+    min-width: 5em;
+    max-width: 5em;
+  }
+  
+  ul li a:hover,
+  ul li a:focus {
+    color: #c351fa;
+    background-color: rgba(255,255,255,.6);
+  
+    /*transition*/
+    -webkit-transition: width .3s,right .3s,background-color .3s;
+    -moz-transition: width .3s,right .3s,background-color .3s;
+    -o-transition: width .3s,right .3s,background-color .3s;
+    transition: width .3s,right .3s,background-color .3s;
+  }
+  
+  ul li a:focus { border-bottom: 3px solid #c351fa; }
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:900i');
+
+* {
+  box-sizing: border-box;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.cta {
+    display: flex;
+    padding: 5px 20px;
+    text-decoration: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    color: white;
+    background: #6225E6;
+    transition: 1s;
+    box-shadow: 6px 6px 0 black;
+    transform: skewX(-15deg);
+    position: absolute;
+    top: 430px;
+    left: 25rem;
+
+}
+
+.cta:focus {
+   outline: none; 
+}
+
+.cta:hover {
+    transition: 0.5s;
+    box-shadow: 10px 10px 0 #FBC638;
+}
+
+.cta span:nth-child(2) {
+    transition: 0.5s;
+    margin-right: 0px;
+}
+
+.cta:hover  span:nth-child(2) {
+    transition: 0.5s;
+    margin-right: 45px;
+}
+
+  span {
+    transform: skewX(15deg) 
+  }
+
+  span:nth-child(2) {
+    width: 20px;
+    margin-left: 30px;
+    position: relative;
+    top: 12%;
+  }
+  
+
+path.one {
+    transition: 0.4s;
+    transform: translateX(-60%);
+}
+
+path.two {
+    transition: 0.5s;
+    transform: translateX(-30%);
+}
+
+.cta:hover path.three {
+    animation: color_anim 1s infinite 0.2s;
+}
+
+.cta:hover path.one {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.6s;
+}
+
+.cta:hover path.two {
+    transform: translateX(0%);
+    animation: color_anim 1s infinite 0.4s;
+}
+
+/* SVG animations */
+
+@keyframes color_anim {
+    0% {
+        fill: white;
+    }
+    50% {
+        fill: #4771ac;
+    }
+    100% {
+        fill: white;
+    }
+}
+
+hr {
+    margin: 1.5em 0;
+    text-align: center;
+    border: none;
+  }
+  
+  hr:before {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #2a5887;
+    margin: 0 0.4em;
+  }
+  
+  hr:after {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #2a5887;
+    margin: 0 0.4em;
+  }
+
+  .blockquote {
+    padding: 60px 80px 40px;
+    position: relative;
+}
+.blockquote p {
+    font-family: "Utopia-italic";
+    font-size: 35px;
+    font-weight: 700px;
+    text-align: center;
+}
+
+.blockquote:before {
+  position: absolute;
+  font-family: 'FontAwesome';
+  top: 0;
+  
+  content:"\f10d";
+  font-size: 200px;
+  color: rgba(0,0,0,0.1);
+   
+}
+
+.blockquote::after {
+    content: "";
+    top: 20px;
+    left: 50%;
+    margin-left: -100px;
+    position: absolute;
+    border-bottom: 3px solid #bf0024;
+    height: 3px;
+    width: 200px;
+}
+
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400italic);
+.otro-blockquote{
+  font-size: 1.4em;
+  width:60%;
+  margin:50px auto;
+  font-family:Open Sans;
+  font-style:italic;
+  color: #555555;
+  padding:1.2em 30px 1.2em 75px;
+  border-left:8px solid #78C0A8 ;
+  line-height:1.6;
+  position: relative;
+  background:#EDEDED;
+}
+
+.otro-blockquote::before{
+  font-family:Arial;
+  content: "\201C";
+  color:#78C0A8;
+  font-size:4em;
+  position: absolute;
+  left: 10px;
+  top:-10px;
+}
+
+.otro-blockquote::after{
+  content: '';
+}
+
+.otro-blockquote span{
+  display:block;
+  color:#333333;
+  font-style: normal;
+  font-weight: bold;
+  margin-top:1em;
+}
+
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  section {
+    height: 100vh;
+    width: 100%;
+    display: grid;
+    place-items: center;
+  }
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .column {
+    width: 100%;
+    padding: 0 1em 1em 1em;
+    text-align: center;
+  }
+  .card {
+    width: 100%;
+    height: 100%;
+    padding: 2em 1.5em;
+    background: linear-gradient(#ffffff 50%, #2c7bfe 50%);
+    background-size: 100% 200%;
+    background-position: 0 2.5%;
+    border-radius: 5px;
+    box-shadow: 0 0 35px rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+    transition: 0.5s;
+  }
+  h3 {
+    font-size: 20px;
+    font-weight: 600;
+    color: #1f194c;
+    margin: 1em 0;
+  }
+  p {
+    color: #575a7b;
+    font-size: 15px;
+    line-height: 1.6;
+    letter-spacing: 0.03em;
+  }
+  .icon-wrapper {
+    background-color: #2c7bfe;
+    position: relative;
+    margin: auto;
+    font-size: 30px;
+    height: 2.5em;
+    width: 2.5em;
+    color: #ffffff;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    transition: 0.5s;
+  }
+  .card:hover {
+    background-position: 0 100%;
+  }
+  .card:hover .icon-wrapper {
+    background-color: #ffffff;
+    color: #2c7bfe;
+  }
+  .card:hover h3 {
+    color: #ffffff;
+  }
+  .card:hover p {
+    color: #f0f0f0;
+  }
+  @media screen and (min-width: 768px) {
+    section {
+      padding: 0 2em;
+    }
+    .column {
+      flex: 0 50%;
+      max-width: 50%;
+    }
+  }
+  @media screen and (min-width: 992px) {
+    section {
+      padding: 1em 3em;
+    }
+    .column {
+      flex: 0 0 33.33%;
+      max-width: 33.33%;
+    }
+  }
+
+
+  input[type=text], select, textarea {
+    width: 50%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  input[type=email], select, textarea {
+    width: 50%; /* Full width */
+    padding: 12px; /* Some padding */ 
+    border: 1px solid #ccc; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 6px; /* Add a top margin */
+    margin-bottom: 16px; /* Bottom margin */
+    resize: vertical /* Allow the user to vertically resize the textarea (not horizontally) */
+  }
+  
+  /* Style the submit button with a specific background color etc */
+  button[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+  }
+  
+  /* When moving the mouse over the submit button, add a darker green color */
+  button[type=submit]:hover {
+    background-color: #45a049;
+    text-decoration: none;
+  }
+  
+  /* Add a background color and some padding around the form */
+  .container {
+    border-radius: 5px;
+    background-color: #f2f2f2;
+    padding: 20px;
+  }
+
+
+  /* CSS for the footer and copyright notice */
+footer {
+    background-color:  #373232; /* Background color for the footer */
+    color: #fff; /* Text color for the copyright notice */
+    text-align: center; /* Center-align the text */
+    padding: 10px 0; /* Add padding for spacing */
+    font-size: 14px; /* Adjust the font size */
+}
+
+/* Style the copyright symbol separately if needed */
+footer p::before {
+    content: "\00a9"; /* Unicode for the copyright symbol © */
+    margin-right: 5px; /* Add space between symbol and text */
+    font-size: 16px; /* Adjust the symbol's font size */
+}

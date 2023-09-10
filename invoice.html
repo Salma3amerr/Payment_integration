@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <link rel="stylesheet" href="invoice.css">
+    <script src="generate_invoice.js"></script>
+    <script src="send_email.js"></script>
+
+</head>
+
+<body style="font-family: Arial, sans-serif; background-color: #f4f4f4; margin: 0; padding: 0;">
+    <div class="invoice-container" style="max-width: 800px; margin: 0 auto; padding: 20px; background-color: #ffffff; border: 1px solid #e0e0e0; box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);">
+        <div class="invoice-header" style="display: flex; justify-content: space-between; align-items: center; background-color: #343a40; color: #ffffff; padding: 20px; border-radius: 5px 5px 0 0;">
+            <div class="invoice-title" style="font-size: 24px; font-weight: bold; margin: 0;">Invoice</div>
+            <div class="company-info" style="display: flex; align-items: center;">
+                <img class="company-logo" src="logo-removebg-preview.png" alt="Company Logo" style="max-width: 50px; margin-right: 10px;"> <!-- Adjust logo size -->
+                <div class="company-name" style="font-size: 18px;">Sparks Payment Gateway</div>
+            </div>
+        </div>
+        <div class="invoice-body" style="padding: 20px;">
+            <h2>Bill Details</h2>
+            <div class="bill-details" id="bill-details">            </div>
+            <hr>
+            <h2>Thank You for Your Donation!</h2>
+            <p>Your generous donation is making a significant impact by providing shelter and support to homeless individuals in need. Your contribution helps save lives and gives hope to those less fortunate.</p>
+            <br>
+            <hr>
+            <h2>Payment Details</h2>
+            <div class="payment-details">
+                <p><strong>Amount to be Paid:</strong> $<span id="amount-to-pay"></span></p>
+                <p><strong>Email:</strong> <span id="user-email"></span></p>
+            </div>
+        </div>
+        
+        <center>
+            <footer>
+                <p>&copy; 2023 Sparks Payment gateway. All rights reserved.</p>
+            </footer>
+        </center>
+    </div>
+    <script>
+        // Function to populate bill details from the query parameters
+        function populateBillDetails() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const firstName = urlParams.get("full_name");
+            const nickname = urlParams.get("nickname");
+            const email = urlParams.get("user_email");
+            const gender = urlParams.get("gender");
+            const amountToPay = urlParams.get("amount_to_pay");
+
+            // Populate the bill details
+            const billDetails = document.getElementById("bill-details");
+            billDetails.innerHTML = `
+                <p><strong>First Name:</strong> ${firstName}</p>
+                <p><strong>Nickname:</strong> ${nickname}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Gender:</strong> ${gender}</p>
+            `;
+
+            // Populate the amount to be paid
+            const amountToPayElement = document.getElementById("amount-to-pay");
+            amountToPayElement.textContent = amountToPay;
+
+            // Populate the user email for sending the invoice
+            const userEmailElement = document.getElementById("user-email");
+            userEmailElement.textContent = email;
+        }
+
+        // Fetch the invoice content from the server
+        async function fetchInvoiceContent() {
+            try {
+                const response = await fetch('invoice.html');
+                const content = await response.text();
+
+                // Set the HTML content of the page
+                document.body.innerHTML = content;
+
+                // Populate bill details and other information
+                populateBillDetails();
+            } catch (error) {
+                console.error('Error fetching invoice:', error);
+            }
+        }
+
+        // Trigger the invoice fetching process when the page loads
+        window.onload = () => {
+            fetchInvoiceContent();
+        };
+    </script>
+</body>
+</html>
